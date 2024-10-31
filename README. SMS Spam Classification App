@@ -1,0 +1,43 @@
+SMS Spam Classification App
+This project is a machine learning application built to classify SMS messages as either "spam" or "not spam." The application utilizes a pipeline with TF-IDF vectorization and a Linear Support Vector Classifier (SVC) for classification. Additionally, it includes an interactive Gradio interface where users can input an SMS message and receive a classification.
+
+Project Structure
+sms_classification function: Trains a model to classify SMS messages as spam or not spam.
+sms_prediction function: Uses the trained model to classify new SMS messages.
+sms_app Gradio Interface: Provides a simple web interface for users to interact with the model by inputting text messages and receiving classifications.
+Prerequisites
+To run this project, you need the following libraries:
+
+pandas
+scikit-learn
+gradio
+You can install these dependencies via pip:
+
+bash
+Copy code
+pip install pandas scikit-learn gradio
+Files
+gradio_sms_text_classification.ipynb: The main notebook containing all code, including model training and the Gradio interface.
+README.md: Project overview and instructions (this file).
+Usage
+Load the Dataset: The dataset should be loaded into a pandas.DataFrame with columns text_message (the SMS content) and label (spam or not spam).
+
+Train the Model: Run the sms_classification function on the dataset to create a trained model pipeline.
+
+Make Predictions: Use the sms_prediction function to predict whether new SMS messages are spam or not.
+
+Launch the Gradio App: Run sms_app() to start the Gradio interface. Enter an SMS message, and the app will display the classification result.
+
+Code Walkthrough
+Data Loading: The SMS dataset is loaded into a pandas.DataFrame.
+Model Training: sms_classification splits the dataset into training and testing sets, builds a pipeline using TF-IDF and LinearSVC, and trains the model.
+Prediction Function: sms_prediction takes an SMS message as input and returns whether it is "spam" or "not spam."
+Gradio Interface: sms_app sets up a simple web-based user interface using Gradio, allowing users to enter SMS text and view the classification output.
+Example
+Run the following command to start the Gradio app:
+
+python
+Copy code
+sms_app()
+Enter an SMS message in the "Enter SMS Text" textbox, and the prediction (spam or not spam) will appear in the "Prediction" textbox.
+
